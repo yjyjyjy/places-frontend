@@ -89,7 +89,8 @@ const Auth = () => {
         formData.append("name", formState.inputs.name.value);
         formData.append("password", formState.inputs.password.value);
         formData.append("image", formState.inputs.image.value);
-
+        console.log(formData)
+        console.log(process.env.REACT_APP_BACKEND_API_URL + "/users/login")
         const responseData = await sendRequest(
           process.env.REACT_APP_BACKEND_API_URL + "/users/signup",
           "POST",
