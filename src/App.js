@@ -22,6 +22,8 @@ const Auth = React.lazy(() => import("./user/pages/Auth"));
 
 const App = () => {
   const [authToken, currentUserId, login, logout] = useAuth();
+  console.log('LOG TESTING')
+  console.error('ERROR TESTING')
 
   let routes;
 
