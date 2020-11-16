@@ -12,18 +12,17 @@ import { useAuth } from "./shared/hooks/auth-hook";
 import LoadingSpinner from "./shared/components/UIElements/LoadingSpinner";
 
 import Users from "./user/pages/Users";
-const NewPlace = React.lazy(() => import("./place/pages/NewPlace"));
-const UserPlaces = React.lazy(() => import("./place/pages/UserPlaces"));
-const UpdatePlace = React.lazy(() => import("./place/pages/UpdatePlace"));
-const Auth = React.lazy(() => import("./user/pages/Auth"));
-
-
-
+import NewPlace from "./place/pages/NewPlace";
+import UserPlaces from "./place/pages/NewPlace";
+import UpdatePlace from "./place/pages/UpdatePlace";
+import Auth from "./user/pages/Auth";
+// const NewPlace = React.lazy(() => import("./place/pages/NewPlace"));
+// const UserPlaces = React.lazy(() => import("./place/pages/UserPlaces"));
+// const UpdatePlace = React.lazy(() => import("./place/pages/UpdatePlace"));
+// const Auth = React.lazy(() => import("./user/pages/Auth"));
 
 const App = () => {
   const [authToken, currentUserId, login, logout] = useAuth();
-  console.log('LOG TESTING')
-  console.error('ERROR TESTING')
 
   let routes;
 

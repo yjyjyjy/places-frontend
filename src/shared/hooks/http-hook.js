@@ -16,6 +16,14 @@ export const useHttpClient = () => {
       activeHttpRequests.current.push(httpAbortCtrl);
 
       try {
+        console.log(
+          "~~~~~~~~~~~~ SENDING HTTP REQUEST START ~~~~~~~~~~~~~~~~~"
+        );
+        console.log("URL: " + url);
+        console.log("METHOD: " + method);
+        console.log("BODY: " + body);
+        console.log("HEADERS: " + headers);
+
         const response = await fetch(url, {
           method,
           body,
@@ -33,7 +41,7 @@ export const useHttpClient = () => {
         throw new Error(err);
       } finally {
         setIsLoading(false);
-        
+
         // remove the abort controller since the request is completed.
         activeHttpRequests.current = activeHttpRequests.current.filter(
           (ctrl) => ctrl !== httpAbortCtrl

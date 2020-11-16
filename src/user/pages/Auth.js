@@ -88,9 +88,13 @@ const Auth = () => {
         formData.append("email", formState.inputs.email.value);
         formData.append("name", formState.inputs.name.value);
         formData.append("password", formState.inputs.password.value);
-        formData.append("image", formState.inputs.image.value);
-        console.log(formData)
-        console.log(process.env.REACT_APP_BACKEND_API_URL + "/users/login")
+        // formData.append("image", formState.inputs.image.value);
+        console.log("~~~~~~~~~~~ LOG FROM AUTH.js ~~~~~~~~~");
+        for (var pair of formData.entries()) {
+          console.log(pair[0] + ", " + pair[1]);
+        }
+        console.log(process.env.REACT_APP_BACKEND_API_URL + "/users/signup");
+
         const responseData = await sendRequest(
           process.env.REACT_APP_BACKEND_API_URL + "/users/signup",
           "POST",
